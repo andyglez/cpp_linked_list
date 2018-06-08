@@ -1,11 +1,11 @@
 #include <iostream>
-#include "Node.cpp"
+#include "LinkedList.cpp"
 
 using namespace std;
 
 int main() {
-    Node<int> *n = new Node<int>(5);
-    cout << n->Value << endl;
+    LinkedList<int> *list = new LinkedList<int>(5);
+    cout << list->First->Value << endl;
     system("PAUSE");
     return 0;
 }
