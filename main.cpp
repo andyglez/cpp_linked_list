@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
     Node<int> *n = new Node<int>(5);
-    cout << n->value << endl;
+    cout << n->Value << endl;
+    system("PAUSE");
     return 0;
 }

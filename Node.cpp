@@ -5,8 +5,10 @@
 template  <class T>
 class Node{
 public:
-    T value;
+    T Value;
+    Node<T>* Next;
+    Node<T>* Prev;
     Node(T val){
-        value = val;
+        Value = val;
     }
 };
