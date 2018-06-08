@@ -6,9 +6,10 @@
 
 template <class T>
 class LinkedList{
+    typedef Node<T> Node;
 public:
-    Node<T>* First;
+    Node* First;
     LinkedList(T first){
-        First = new Node<T>(first);
+        First = new Node(first);
     }
 };
