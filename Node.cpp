@@ -5,7 +5,8 @@
 template  <class T>
 class Node{
 public:
-    Node(T value){
-
+    T value;
+    Node(T val){
+        value = val;
     }
 };
