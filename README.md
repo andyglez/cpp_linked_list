@@ -57,7 +57,7 @@ According to C++98, there was no error or, at least, not the obvious one for the
 templates occur at compile time, and are not checked until used somewhere else when they generate some real functions according to
 their parameter types
 
-** Class Templates **
+**Class Templates**
 
 ~~~cpp
 template  <class T>
