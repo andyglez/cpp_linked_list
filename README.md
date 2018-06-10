@@ -14,7 +14,7 @@ such as:
 C++ proposes the concept of templates as it's solution to generic programming.
 
 *Function Templates*
-~~~
+~~~cpp
 template <class T>
 T my_max(T x, T y){
     if(x < y)
