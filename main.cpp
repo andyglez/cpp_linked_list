@@ -13,6 +13,6 @@ T my_max(T x, T y){
 int main() {
     LinkedList<int> *list = new LinkedList<int>(5);
     cout << list->First->Value << endl;
-    cout << my_max(8, 9) << endl;
+    cout << my_max<long>(8, 9) << endl;
     return 0;
 }
