@@ -106,8 +106,8 @@ In order to take care of that so called responsibility, there is the **delete** 
 **Operators**
 
 There are three main operations with pointers:
- 1. & - means *address of*
- 2. * - has two meanings:
+  * & - means *address of*
+  * * - has two meanings:
     * In an expression - the object pointed at by
     * In a declaration - a pointer to an object
 
