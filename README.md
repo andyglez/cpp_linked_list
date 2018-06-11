@@ -5,7 +5,6 @@ such as:
   * Generic Programming
   * Memory Management
   * Object Oriented Programming
-  * Instantiation Philosophy
   * Operator Overrides
   * Functional Programming
 
@@ -159,3 +158,35 @@ void function_parameters_examples(){
 **typedef**
 Is one of the language's keywords and its use is only for renaming complex types so code can be more readable.
 Most of pointer variables and instances of some class template are a couple examples of its use.
+
+## Object Oriented Programming ##
+
+The language provides an interface for working with groups of data which are called objects and such interface has the
+name of classes, which are templates for creating different instances of those objects, and holds, possibly, all types
+of data necessary to describe them.
+
+Keyword **struct** can also be used to describe an object, the main difference is that public declaration of its members
+is assumed and can be omitted.
+
+Objects are created and destroyed meanwhile classes persist, so C++ has some member functions to interact with instantiation,
+these are called constructors and destructors.
+
+~~~cpp
+class Node{
+public:
+    Node(int val);
+    ~Node();
+}
+~~~
+
+As member functions, constructors can receive arguments and can be overridden, which means that there will be more than
+one way to construct an object.
+
+Arguments can also be set to a default value:
+
+~~~cpp
+class Node{
+public:
+    Node(int val = 0);
+}
+~~~
