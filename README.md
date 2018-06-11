@@ -103,10 +103,55 @@ The problem is that the programmer has full responsibility of that data he store
 Using the **new** keyword represents an internal call to reserve memory on the heap. Its return value is a pointer.
 In order to take care of that so called responsibility, there is the **delete** keyword, which free that memory previously reserved.
 
-**Operators**
+**Operations with pointers**
 
 There are three main operations with pointers **&** means *address of*, __*__ has two meanings, in an expression represents
 *the object pointed at by* and in a declaration is *a pointer to an object*.
 
 
+**Passing Pointers to Functions**
 
+**By value**
+
+~~~cpp
+void by_value(int x){
+    x = 2;
+}
+void function_parameters_examples(){
+    int arg = 1;
+    by_value(arg);
+    cout << arg << endl; // Prints 1
+}
+~~~
+
+> C++ does not pass a variable to a function, instead passes the value contained within the variable at the time of the call.
+
+**By pointer**
+
+~~~cpp
+void by_pointer(int* x){
+    *x = 2;
+}
+void function_parameters_examples(){
+    int arg = 1;
+    by_pointer(&arg);
+    cout << arg << endl; // Prints 2
+}
+~~~
+
+> A pointer variable is just another name for it's memory address.
+
+**By reference**
+
+~~~cpp
+void by_reference(int& x){
+    x = 2;
+}
+void function_parameters_examples(){
+    int arg = 1;
+    by_reference(arg);
+    cout << arg << endl; // Prints 2
+}
+~~~
+
+> It's nothing but a shorthand for passing argument by address making possible not to hassle with pointers.
