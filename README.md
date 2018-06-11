@@ -81,4 +81,35 @@ you supply the template arguments to the class, not the function.
 
 When a member outside of its class template is being defined, it's needed to repeat the template header.
 
+## Memory Management ##
+
+Programmers generally deal with five areas of memory:
+
+  * Global name space
+  * The Heap
+  * Registers
+  * Code space
+  * The Stack
+
+Local variables are on the stack, along with function parameters. Code is in code space and, of course, global variables
+are in global namespace. The registers are used for internal housekeeping functions, such as keeping track of the top of
+the stack and the instruction pointer. Just about all remaining memory is given over to the heap.
+
+> The stack is cleaned automatically when a function returns.
+
+The advantage to the heap is that the memory previously reserved remains available until the programmer explicitly free it.
+The problem is that the programmer has full responsibility of that data he stores on the heap.
+
+Using the **new** keyword represents an internal call to reserve memory on the heap. Its return value is a pointer.
+In order to take care of that so called responsibility, there is the **delete** keyword, which free that memory previously reserved.
+
+**Operators**
+
+There are three main operations with pointers:
+ 1. & - means *address of*
+ 2. * - has two meanings:
+    * In an expression - the object pointed at by
+    * In a declaration - a pointer to an object
+
+
 
