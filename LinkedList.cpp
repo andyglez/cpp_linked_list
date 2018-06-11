@@ -2,14 +2,9 @@
 // Created by Andy on 08/06/2018.
 //
 
-#include "Node.cpp"
+#include "LinkedList.h"
 
 template <class T>
-class LinkedList{
-    typedef Node<T> Node;
-public:
-    Node* First;
-    LinkedList(T first){
-        First = new Node(first);
-    }
-};
+LinkedList<T>::LinkedList(T first){
+    this->First = new Node(first);
+}

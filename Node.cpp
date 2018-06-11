@@ -1,14 +1,9 @@
 //
 // Created by Andy on 6/8/2018.
 //
+#include "Node.h"
 
 template  <class T>
-class Node{
-public:
-    T Value;
-    Node<T>* Next;
-    Node<T>* Prev;
-    Node(T val){
-        Value = val;
-    }
-};
+Node<T>::Node(T val){
+    this->Value = val;
+}
