@@ -155,3 +155,7 @@ void function_parameters_examples(){
 ~~~
 
 > It's nothing but a shorthand for passing argument by address making possible not to hassle with pointers.
+
+**typedef**
+Is one of the language's keywords and its use is only for renaming complex types so code can be more readable.
+Most of pointer variables and instances of some class template are a couple examples of its use.
