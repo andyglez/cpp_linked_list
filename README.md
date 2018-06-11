@@ -105,15 +105,8 @@ In order to take care of that so called responsibility, there is the **delete** 
 
 **Operators**
 
-> There are three main operations with pointers:
->
-> (ampersand) & - means *address of*
->
-> (asterik)   * - has two meanings:
->
->    In an expression - *the object pointed at by*
->
->    In a declaration - *a pointer to an object*
+There are three main operations with pointers **&** means *address of*, __*__ has two meanings, in an expression represents
+*the object pointed at by* and in a declaration is *a pointer to an object*.
 
 
 
