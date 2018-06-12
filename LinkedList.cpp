@@ -5,6 +5,11 @@
 #include "LinkedList.h"
 
 template <class T>
+LinkedList<T>::LinkedList(LinkedList<T>& list) {
+    Node* f = list.First;
+    this->First = new Node(*f);
+}
+template <class T>
 LinkedList<T>::LinkedList(T first){
     this->First = new Node(first);
 }

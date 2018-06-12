@@ -36,9 +36,12 @@ void function_parameters_examples(){
 
 int main() {
     LinkedList<int>* list = new LinkedList<int>(5);
-    cout << list->First->Value << endl;
+    LinkedList<int>* copy = new LinkedList<int>(*list);
+    cout << copy << " === " << list << endl;
+    cout << copy->First->Value << " === " << list->First->Value << endl;
 
     function_parameters_examples();
     delete(list);
+    delete(copy);
     return 0;
 }
