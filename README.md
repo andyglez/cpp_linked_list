@@ -221,10 +221,26 @@ public:
     Node* First;
     LinkedList(T first);
     LinkedList(LinkedList<T>& list);
+    virtual ~LinkedList();
 };
 template <class T>
 LinkedList<T>::LinkedList(const LinkedList<T>& list) {
     Node* f = list.First;
     this->First = new Node(*f);
 }
+template <class T>
+LinkedList<T>::~LinkedList() {
+    delete First;
+}
 ~~~
+
+**Destructors**
+
+The syntax is similar to a constructor with the exception for a tilde (~).
+Every local variable is deleted automatically when the instance is call to deletion, but care most be taken with heap
+memory variables, so they have to be manually freed, this is the main use of destructor.
+
+> Destructors should be marked virtual, so in a class hierarchy a child class can redefine what it should delete.
+
+A child class may add some pointer fields in difference to its original parent class, for that reason the destructor must
+be overridden and, doing so, avoid memory leaks.
