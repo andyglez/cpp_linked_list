@@ -35,9 +35,6 @@ Node<T>::~Node() {
     if(Next != NULL){
         delete Next;
     }
-    if(Prev != NULL){
-        delete Prev;
-    }
 }
 
 template <class T>

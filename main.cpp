@@ -45,7 +45,7 @@ void vector_constructions_examples(){
     for (int i = 0; i < r.size(); i++) {
         cout << r[i] << endl;
     }
-    //delete(v);
+    delete(v);
 }
 
 int main() {
