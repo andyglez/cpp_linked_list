@@ -190,3 +190,26 @@ public:
     Node(int val = 0);
 }
 ~~~
+
+The rules for the order of construction of objects are as follows:
+  * Local and static objects are constructed in the order in which their declarations are invoked.
+  * Static objects are constructed only once.
+  * All global objects are constructed before *main()* and in no particular order.
+  * Members are constructed in the order in which they are declared in the class.
+  * Destructors are invoked in the reverse order from constructors.
+
+> A static variable that is local to a function retains its values from one function invocation to the next.
+>
+> A global variable is a variable declared on a parent scope to its context of use.
+
+**Types of constructors**
+
+Whenever a class is defined with no member constructors, C++ creates one by default, with no parameters and everything
+inside the class definition goes to binary zero. This is called the default constructor.
+
+There are, of course, the constructors user defined, with overloads as will.
+
+According to the syntax A::A(A&), where A is the name of the class represents a special type of constructor called the
+*copy constructor*, it's called copy because it creates a new object with a different address in memory but the same values
+as the object given by parameter or, at least, a customized copy of it.
+
