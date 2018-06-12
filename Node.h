@@ -10,6 +10,7 @@ public:
     Node<T>* Prev;
     Node(T val);
     Node(const Node<T>& n);
+    virtual ~Node();
 };
 
 

@@ -11,4 +11,5 @@ public:
     Node* First;
     LinkedList(T first);
     LinkedList(const LinkedList<T>& list);
+    virtual ~LinkedList();
 };

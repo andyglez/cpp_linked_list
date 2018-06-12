@@ -13,3 +13,10 @@ template <class T>
 LinkedList<T>::LinkedList(T first){
     this->First = new Node(first);
 }
+
+template <class T>
+LinkedList<T>::~LinkedList() {
+    delete First;
+}
+
+

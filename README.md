@@ -223,7 +223,7 @@ public:
     LinkedList(LinkedList<T>& list);
 };
 template <class T>
-LinkedList<T>::LinkedList(LinkedList<T>& list) {
+LinkedList<T>::LinkedList(const LinkedList<T>& list) {
     Node* f = list.First;
     this->First = new Node(*f);
 }
