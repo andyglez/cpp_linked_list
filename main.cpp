@@ -48,15 +48,35 @@ void vector_constructions_examples(){
     delete(v);
 }
 
+template <class T>
+void Print(LinkedList<T>* list){
+    Node<T>* iter = list->First;
+    while (iter != NULL){
+        cout << iter->Value << endl;
+        iter = iter->Next;
+    }
+}
+
+
 int main() {
     LinkedList<int>* list = new LinkedList<int>();
-    (*list) = 5;
+    //(*list) = 5;
     LinkedList<int>* copy = new LinkedList<int>(*list);
-    cout << copy << " === " << list << endl;
-    cout << copy->First->Value << " === " << list->First->Value << endl;
+    //cout << copy << " === " << list << endl;
+    //cout << copy->First->Value << " === " << list->First->Value << endl;
 
-    vector_constructions_examples();
-    function_parameters_examples();
+    for (int i = 0; i < 100; i++) {
+        list->AddLast(i);
+    }
+    /*for (int j = 0; j < 99; ++j) {
+        list->RemoveLast();
+    }*/
+    cout << list->At(78) << endl;
+    cout << list->RemoveAt(78) << endl;
+    //Print(list);
+    cout << "Size = " << list->Size() << endl;
+    //vector_constructions_examples();
+    //function_parameters_examples();
     delete(list);
     delete(copy);
     return 0;

@@ -19,6 +19,11 @@ public:
     virtual ~LinkedList();
 
     virtual void operator=(T first);
+
     int Size();
+    void AddLast(T value);
+    T RemoveLast();
+    T At(int index);
+    T RemoveAt(int index);
     vector<T> Enumerate();
 };

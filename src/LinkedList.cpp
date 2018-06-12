@@ -2,6 +2,7 @@
 // Created by Andy on 08/06/2018.
 //
 
+#include <c++/stdexcept>
 #include "../hdr/LinkedList.h"
 
 template <class T>
@@ -76,6 +77,66 @@ vector<T> LinkedList<T>::Enumerate() {
     return v;
 }
 
+template <class T>
+void LinkedList<T>::AddLast(T value) {
+    if(First != NULL) {
+        Node *iter = First;
+        while (iter->Next != NULL) {
+            iter = iter->Next;
+        }
+        iter->Next = new Node(value);
+        iter->Next->Prev = iter;
+    }
+    else{
+        First = new Node(value);
+    }
+}
+
+template <class T>
+T LinkedList<T>::RemoveLast() {
+    Node *iter = First;
+    if(First != NULL){
+        while (iter->Next != NULL){
+            iter = iter->Next;
+        }
+    }
+    T result = iter->Value;
+    if(iter->Prev != NULL){
+        iter->Prev->Next = NULL;
+    }
+    delete iter;
+    return result;
+}
+
+template <class T>
+T LinkedList<T>::At(int index) {
+    Node *iter = First;
+    while (iter != NULL && --index > 0){
+        iter = iter->Next;
+    }
+    if(index != 0){
+        throw new out_of_range("Index exceeds the list's size");
+    }
+    return iter->Value;
+}
+
+template <class T>
+T LinkedList<T>::RemoveAt(int index) {
+    Node *iter = First;
+    while (iter != NULL && --index > 0){
+        iter = iter->Next;
+    }
+    if(index != 0){
+        throw new out_of_range("Index exceeds the list's size");
+    }
+    Node *aux = iter->Prev;
+    aux->Next = iter->Next;
+    iter->Next->Prev = iter->Prev;
+    iter->Next = NULL;
+    int value = iter->Value;
+    delete iter;
+    return value;
+}
 
 
 
