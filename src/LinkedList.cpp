@@ -2,7 +2,7 @@
 // Created by Andy on 08/06/2018.
 //
 
-#include "LinkedList.h"
+#include "../hdr/LinkedList.h"
 
 template <class T>
 LinkedList<T>::LinkedList() {

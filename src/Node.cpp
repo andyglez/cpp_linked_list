@@ -2,7 +2,7 @@
 // Created by Andy on 6/8/2018.
 //
 #include <c++/cstdio>
-#include "Node.h"
+#include "../hdr/Node.h"
 
 template <class T>
 Node<T>::Node(const Node<T>& n){

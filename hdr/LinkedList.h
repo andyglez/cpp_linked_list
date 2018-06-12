@@ -3,7 +3,7 @@
 //
 
 #include <c++/vector>
-#include "Node.cpp"
+#include "../src/Node.cpp"
 
 using namespace std;
 
