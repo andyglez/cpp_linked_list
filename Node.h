@@ -9,7 +9,7 @@ public:
     Node<T>* Next;
     Node<T>* Prev;
     Node(T val);
-    Node(Node<T>& n);
+    Node(const Node<T>& n);
 };
 
 

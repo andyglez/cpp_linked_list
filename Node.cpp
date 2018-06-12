@@ -5,7 +5,7 @@
 #include "Node.h"
 
 template <class T>
-Node<T>::Node(Node<T>& n){
+Node<T>::Node(const Node<T>& n){
     this->Value = n.Value;
     if(n.Next != NULL){
         Node<T>* aux1 = n.Next;

@@ -10,5 +10,5 @@ public:
     typedef Node<T> Node;
     Node* First;
     LinkedList(T first);
-    LinkedList(LinkedList<T>& list);
+    LinkedList(const LinkedList<T>& list);
 };
