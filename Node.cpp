@@ -40,4 +40,20 @@ Node<T>::~Node() {
     }
 }
 
+template <class T>
+void Node<T>::operator=(T val) {
+    Value = val;
+}
+
+template <class T>
+Node<T>::Node() {
+    Value = 0;
+    Next  = 0;
+    Prev  = 0;
+}
+
+
+
+
+
 

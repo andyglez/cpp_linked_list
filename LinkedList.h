@@ -9,7 +9,10 @@ class LinkedList{
 public:
     typedef Node<T> Node;
     Node* First;
+    LinkedList();
     LinkedList(T first);
     LinkedList(const LinkedList<T>& list);
     virtual ~LinkedList();
+
+    virtual void operator=(T first);
 };
