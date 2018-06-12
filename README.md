@@ -213,3 +213,18 @@ According to the syntax A::A(A&), where A is the name of the class represents a 
 *copy constructor*, it's called copy because it creates a new object with a different address in memory but the same values
 as the object given by parameter or, at least, a customized copy of it.
 
+~~~cpp
+template <class T>
+class LinkedList{
+public:
+    typedef Node<T> Node;
+    Node* First;
+    LinkedList(T first);
+    LinkedList(LinkedList<T>& list);
+};
+template <class T>
+LinkedList<T>::LinkedList(LinkedList<T>& list) {
+    Node* f = list.First;
+    this->First = new Node(*f);
+}
+~~~
