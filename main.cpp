@@ -71,8 +71,9 @@ int main() {
     /*for (int j = 0; j < 99; ++j) {
         list->RemoveLast();
     }*/
-    cout << list->At(78) << endl;
-    cout << list->RemoveAt(78) << endl;
+    int a = (*list)[78];
+    cout << list->At(78) << " -- " << a << endl;
+    //cout << list->RemoveAt(78) << endl;
     //Print(list);
     cout << "Size = " << list->Size() << endl;
     //vector_constructions_examples();

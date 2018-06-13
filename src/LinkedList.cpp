@@ -54,7 +54,7 @@ void LinkedList<T>::operator=(T first) {
 }
 
 template <class T>
-T LinkedList<T>::operator[](int index) {
+const T LinkedList<T>::operator[ ](const int index) {
     return At(index);
 }
 

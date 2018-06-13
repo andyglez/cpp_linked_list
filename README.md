@@ -279,11 +279,11 @@ public:
 }
 
 template <class T>
-T LinkedList<T>::operator[](int index) {
+const T LinkedList<T>::operator[](const int index) {
     return At(index);
 }
 template <class T>
-T LinkedList<T>::At(int index) {
+const T LinkedList<T>::At(int index) {
     Node *iter = First;
     while (iter != NULL && --index > 0){
         iter = iter->Next;

@@ -19,7 +19,7 @@ public:
     virtual ~LinkedList();
 
     virtual void operator=(T first);
-    virtual T operator[](int index);
+    virtual const T operator[](const int index);
 
     int Size();
     void AddLast(T value);
