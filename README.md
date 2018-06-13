@@ -308,6 +308,7 @@ There are two main problems with it's use:
 > The solution for the last problem is given by *inline* functions
 
 **Inline Functions**
+
 They are expanded in place just like macros, but they do have access to member class data because their expansion takes
 place within the compiler.
 
@@ -318,4 +319,47 @@ Just the same way as macros, *inline* functions are best suited for small functi
 place, so for a very large function whenever it's expansion takes place doesn't really represent any performance gain.
 
 As with any function, the compiler holds the function type in its symbol table and when its body parses without error
-the code for the function body is also brought into the symbol table. 
+the code for the function body is also brought into the symbol table.
+
+**Const**
+
+The concept of constant was created to draw a line between what changes and what doesn't.
+It's first use comes from a change of practice to use the preprocessor keyword **#DEFINE**.
+
+A const defaults to an internal linkage which means that the compiler doesn't reserve memory for it, unless is more of a
+data structure, like an array, in that case it can be called 'a piece of storage that cannot be changed', the same can be
+given for a const with an external linkage, specified with keyword **extern**, thus is remains accessible through out a project.
+
+> Pointers can be made const.
+
+*Pointer to const*
+
+~~~cpp
+const int* u;
+~~~
+
+It is better read "u is a pointer, which point to a const int".
+
+Note that no initialization is required because u is pointer that points to anything, but the value pointed is the one who
+doesn't change.
+
+*const Pointer*
+
+~~~cpp
+int d = 1;
+int* const w = &d;
+~~~
+
+This is now read "w is a constant pointer to an int".
+
+In this case the compiler requires that it be given an initial value.
+
+*const Pointer to const*
+
+~~~cpp
+int d = 1;
+const int* const x = &d;
+int const* const y = &d;
+~~~
+
+It works the same for x and y, now neither the pointer or the object can change.
