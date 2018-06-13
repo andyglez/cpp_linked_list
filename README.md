@@ -264,3 +264,34 @@ since, underneath, they have different signatures, that is given from the number
 
 So, prefix increment or decrement really calls an operator function with no arguments, and postfix increment or decrement
 really calls the same operator function but with a dummy constant parameter.
+
+~~~cpp
+template <class T>
+class LinkedList{
+public:
+    typedef Node<T> Node;
+    Node* First;
+    LinkedList();
+    LinkedList(T first);
+
+    virtual T operator[](int index);
+    T At(int index);
+}
+
+template <class T>
+T LinkedList<T>::operator[](int index) {
+    return At(index);
+}
+template <class T>
+T LinkedList<T>::At(int index) {
+    Node *iter = First;
+    while (iter != NULL && --index > 0){
+        iter = iter->Next;
+    }
+    if(index != 0){
+        throw new out_of_range("Index exceeds the list's size");
+    }
+    return iter->Value;
+}
+~~~
+
