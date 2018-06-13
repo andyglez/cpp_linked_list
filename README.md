@@ -382,4 +382,4 @@ how many objects are created".
 static const int size = 100;
 ~~~
 
-> **static const** always requires that an initialization at the point of definition.
+> **static const** always requires an initialization at the point of definition.
