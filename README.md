@@ -363,3 +363,23 @@ int const* const y = &d;
 ~~~
 
 It works the same for x and y, now neither the pointer or the object can change.
+
+In functions works the same logic, but the main difference is when passing arguments and returning them between functions.
+C++, when encounters with a case like that, creates the necessary temporary objects, which are const by nature. So it's a
+feature to keep in mind since this is an error-prone situation.
+
+The use of const with classes is little more complicated, for instance, to guarantee the const attribute of a class object
+only a const member function may be called for a const object.
+
+> The use of const inside a class means "This is constant for the lifetime of the object".
+
+For that reason is that a const must be already initialized inside the main body of the constructor.
+Then, const for classes exist only on run time execution but there is a way for having const from before, at compiling time.
+For that purpose the const must be declared **static**, which in this situation means "this is from the class regardless of
+how many objects are created".
+
+~~~cpp
+static const int size = 100;
+~~~
+
+> **static const** always requires that an initialization at the point of definition.
