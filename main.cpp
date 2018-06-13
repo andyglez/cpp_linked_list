@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "src/LinkedList.cpp"
+#include "src/Function.cpp"
 
 using namespace std;
 
@@ -57,6 +58,18 @@ void Print(LinkedList<T>* list){
     }
 }
 
+template <class R, class T>
+LinkedList<R>* Map(LinkedList<T>* orig, Function<R,T> f){
+    LinkedList<R>* list = new LinkedList<R>();
+    int size = orig->Size();
+    for (int i = 0; i < size; i++) {
+        T aux  = (*orig)[i];
+        R item = f(aux);
+        list->AddLast(item);
+    }
+    return list;
+};
+
 
 int main() {
     LinkedList<int>* list = new LinkedList<int>();
@@ -68,6 +81,8 @@ int main() {
     for (int i = 0; i < 100; i++) {
         list->AddLast(i);
     }
+    Function<int,int> f = Function<int, int>();
+    LinkedList<int>* aux = Map<int,int>(list, f);
     /*for (int j = 0; j < 99; ++j) {
         list->RemoveLast();
     }*/
@@ -75,6 +90,7 @@ int main() {
     cout << list->At(78) << " -- " << a << endl;
     //cout << list->RemoveAt(78) << endl;
     //Print(list);
+    Print(aux);
     cout << "Size = " << list->Size() << endl;
     //vector_constructions_examples();
     //function_parameters_examples();
@@ -82,3 +98,4 @@ int main() {
     delete(copy);
     return 0;
 }
+#pragma clang diagnostic pop

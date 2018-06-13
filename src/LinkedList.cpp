@@ -119,7 +119,7 @@ T LinkedList<T>::At(int index) {
     while (iter != NULL && --index > 0){
         iter = iter->Next;
     }
-    if(index != 0){
+    if(index > 0){
         throw new out_of_range("Index exceeds the list's size");
     }
     return iter->Value;
@@ -131,7 +131,7 @@ T LinkedList<T>::RemoveAt(int index) {
     while (iter != NULL && --index > 0){
         iter = iter->Next;
     }
-    if(index != 0){
+    if(index > 0){
         throw new out_of_range("Index exceeds the list's size");
     }
     Node *aux = iter->Prev;
@@ -142,6 +142,9 @@ T LinkedList<T>::RemoveAt(int index) {
     delete iter;
     return value;
 }
+
+
+
 
 
 
