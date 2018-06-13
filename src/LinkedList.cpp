@@ -54,6 +54,11 @@ void LinkedList<T>::operator=(T first) {
 }
 
 template <class T>
+T LinkedList<T>::operator[](int index) {
+    return At(index);
+}
+
+template <class T>
 int LinkedList<T>::Size() {
     if(First == NULL)
         return 0;
@@ -137,6 +142,10 @@ T LinkedList<T>::RemoveAt(int index) {
     delete iter;
     return value;
 }
+
+
+
+
 
 
 

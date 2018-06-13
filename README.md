@@ -5,7 +5,7 @@ such as:
   * Generic Programming
   * Memory Management
   * Object Oriented Programming
-  * Operator Overrides
+  * Operator Overloading
   * Functional Programming
 
 ## Generic Programming ##
@@ -244,3 +244,23 @@ memory variables, so they have to be manually freed, this is the main use of des
 
 A child class may add some pointer fields in difference to its original parent class, for that reason the destructor must
 be overridden and, doing so, avoid memory leaks.
+
+## Operator overloading ##
+
+Is just another way to make a function call but with no parenthesis for parameters on its call syntax.
+  * If it's a unary operator then one argument, else if it's a binary operator then two arguments.
+  * If the operator is defined as a global function then it's previous case or if it's a member function then zero arguments
+   for unary, one for binary and the object becomes a left-hand argument.
+
+**Restrictions**
+  * It's impossible to combine operators that have no meaning in C.
+  * It's not allowed to change the evaluation precedence of operators.
+  * It's always the same number of arguments for each operator.
+
+**Increment and Decrement**
+
+The main dilemma is within their prefix and postfix syntax, so the two operator functions are differentiated from each other
+since, underneath, they have different signatures, that is given from the number of arguments.
+
+So, prefix increment or decrement really calls an operator function with no arguments, and postfix increment or decrement
+really calls the same operator function but with a dummy constant parameter.
