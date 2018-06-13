@@ -295,3 +295,27 @@ const T LinkedList<T>::At(int index) {
 }
 ~~~
 
+**C Macros**
+
+In C, one of the ways to preserve efficiency is through the use of *macros*, which allows to make function calls without
+the normal overhead. This is given because it's real implementation goes to the preprocessor which replaces all macro calls
+directly from with it's code.
+
+There are two main problems with it's use:
+  * A macro seems to behave like a normal function call, but it doesn't always act like one.
+  * In C++, the preprocessor has no permission to access class member data.
+
+> The solution for the last problem is given by *inline* functions
+
+**Inline Functions**
+They are expanded in place just like macros, but they do have access to member class data because their expansion takes
+place within the compiler.
+
+> Any function defined within a class body is automatically inline.
+
+In a non-class function it can be specified with the keyword *inline*.
+Just the same way as macros, *inline* functions are best suited for small functions because it replicates it's code in
+place, so for a very large function whenever it's expansion takes place doesn't really represent any performance gain.
+
+As with any function, the compiler holds the function type in its symbol table and when its body parses without error
+the code for the function body is also brought into the symbol table. 
