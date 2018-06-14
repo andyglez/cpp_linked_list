@@ -62,7 +62,7 @@ template <class R, class T>
 LinkedList<R>* Map(LinkedList<T>* orig, Function<R,T> f){
     LinkedList<R>* list = new LinkedList<R>();
     int size = orig->Size();
-    for (int i = 0; i < size; i++) {
+    for (int i = 1; i <= size; i++) {
         T aux  = (*orig)[i];
         R item = f(aux);
         list->AddLast(item);
