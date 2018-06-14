@@ -1,12 +1,15 @@
 # C++ Generic Linked List implementation #
 
-This project represents an introduction to C++, along with some of it's specifications
-such as:
+This project represents an introduction to C++ where some of the language's main topics are presented according to it's use in
+the source files. Between them are some basic ground rules of the language's features such as:
   * Generic Programming
   * Memory Management
   * Object Oriented Programming
   * Operator Overloading
   * Functional Programming
+
+This work, neither source code or this file, does not cover until the latest C++ version, so some features may be lost if looking
+for the complete subject within the ones mentioned earlier.
 
 ## Generic Programming ##
 
@@ -383,3 +386,28 @@ static const int size = 100;
 ~~~
 
 > **static const** always requires an initialization at the point of definition.
+
+## Functional Programming ##
+
+Classes have many uses, one of them is to replace functions.
+This is given by the function call operator which lets an object behave like a function, it's only needed an overload for
+operator() for getting to that goal.
+
+> It can take any number of arguments and can have any return type.
+
+The objects that are instances of classes with such behavior are usually called *functors* or *function object*. In next
+versions of C++ like C++11 the idea of functional programming gets more complete with the introduction of lambda expressions
+but, still, functors are a great solution for many problems.
+
+~~~cpp
+template <class R, class T>
+class Function{
+public:
+    virtual R operator()(const T& arg);
+};
+template <class R, class T>
+R Function<R,T>::operator()(const T& arg){
+    return R(arg * 10);
+}
+~~~
+
