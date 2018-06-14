@@ -72,30 +72,45 @@ LinkedList<R>* Map(LinkedList<T>* orig, Function<R,T> f){
 
 
 int main() {
+
+    ///DEFAULT CONSTRUCTOR EXAMPLE
     LinkedList<int>* list = new LinkedList<int>();
-    //(*list) = 5;
+
+    /// BASIC ASSIGNATION EXAMPLE
+    (*list) = 5;
+
+    ///COPY CONSTRUCTOR SAMPLE
     LinkedList<int>* copy = new LinkedList<int>(*list);
-    //cout << copy << " === " << list << endl;
-    //cout << copy->First->Value << " === " << list->First->Value << endl;
+
 
     for (int i = 0; i < 100; i++) {
         list->AddLast(i);
     }
+    /// FUNCTION EXAMPLE
     Function<int,int> f = Function<int, int>();
     LinkedList<int>* aux = Map<int,int>(list, f);
-    /*for (int j = 0; j < 99; ++j) {
-        list->RemoveLast();
-    }*/
+
+    /// INDEXING EXAMPLE WITH OPERATOR [] AND LOCAL FUNCTION
     int a = (*list)[78];
     cout << list->At(78) << " -- " << a << endl;
-    //cout << list->RemoveAt(78) << endl;
+
+    /// REMOVING LINKED NODES EXAMPLE
+    for (int j = 0; j < 99; ++j) {
+        list->RemoveLast();
+    }
+
+
+    /// EXTENDED PRINTS
     //Print(list);
-    Print(aux);
-    cout << "Size = " << list->Size() << endl;
+    //Print(aux);
+    //cout << "Size = " << list->Size() << endl;
+
+    /// OTHER EXAMPLES
     //vector_constructions_examples();
     //function_parameters_examples();
+
+    /// CLEANING UP ;)
     delete(list);
     delete(copy);
     return 0;
 }
-#pragma clang diagnostic pop
