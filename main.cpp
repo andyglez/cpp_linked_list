@@ -70,6 +70,11 @@ LinkedList<R>* Map(LinkedList<T>* orig, Function<R,T> f){
     return list;
 };
 
+template <class R, class T>
+R my_func(T arg){
+    return R(arg * 5);
+};
+
 
 int main() {
 
@@ -87,12 +92,12 @@ int main() {
         list->AddLast(i);
     }
     /// FUNCTION EXAMPLE
-    Function<int,int> f = Function<int, int>();
+    Function<int,int> f = my_func;
     LinkedList<int>* aux = Map<int,int>(list, f);
 
     /// INDEXING EXAMPLE WITH OPERATOR [] AND LOCAL FUNCTION
-    int a = (*list)[78];
-    cout << list->At(78) << " -- " << a << endl;
+    //int a = (*list)[78];
+    //cout << list->At(78) << " -- " << a << endl;
 
     /// REMOVING LINKED NODES EXAMPLE
     for (int j = 0; j < 99; ++j) {
@@ -102,7 +107,7 @@ int main() {
 
     /// EXTENDED PRINTS
     //Print(list);
-    //Print(aux);
+    Print(aux);
     //cout << "Size = " << list->Size() << endl;
 
     /// OTHER EXAMPLES

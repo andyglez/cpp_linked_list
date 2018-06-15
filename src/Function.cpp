@@ -7,5 +7,13 @@
 
 template <class R, class T>
 R Function<R,T>::operator()(const T& arg){
-    return R(arg * 10);
+    R ret = this->func(arg);
+    return ret;
 }
+
+template <class R,class T>
+void Function<R,T>::operator=(R (*f)(T arg)) {
+    this->func = f;
+}
+
+

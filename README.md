@@ -389,6 +389,8 @@ static const int size = 100;
 
 ## Functional Programming ##
 
+**Functors**
+
 Classes have many uses, one of them is to replace functions.
 This is given by the function call operator which lets an object behave like a function, it's only needed an overload for
 operator() for getting to that goal.
@@ -399,15 +401,34 @@ The objects that are instances of classes with such behavior are usually called 
 versions of C++ like C++11 the idea of functional programming gets more complete with the introduction of lambda expressions
 but, still, functors are a great solution for many problems.
 
+**Pointers to functions**
+
+There is another way of approaching functional programming within C++, that is using pointer to functions, allowing to handle
+functions as first-class citizen which means that a function can be passed as a argument, can be assigned as a variable a be
+called under different names.
+
+So, addressing both knowledge, functors and pointers to functions, in addition to templates there can be made a much wider
+solution.
+
 ~~~cpp
 template <class R, class T>
 class Function{
+    R (*func)(T arg);
 public:
+    Function(R (*f)(T arg)) : func(f){}
+    virtual void operator=(R (*f)(T arg));
     virtual R operator()(const T& arg);
 };
+
 template <class R, class T>
 R Function<R,T>::operator()(const T& arg){
-    return R(arg * 10);
+    R ret = this->func(arg);
+    return ret;
+}
+
+template <class R,class T>
+void Function<R,T>::operator=(R (*f)(T arg)) {
+    this->func = f;
 }
 ~~~
 
